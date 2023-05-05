@@ -14,10 +14,19 @@ const Container = styled.div`
   right: 0;
   padding: 20px;
   box-sizing: border-box;
+  flex-direction: column;
 
   @media (max-width: 768px) {
-    margin-bottom: 77px;
+    margin-bottom: 61px;
   }
+`;
+
+const Content = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 5px;
 `;
 
 const Text = styled.p`
@@ -31,4 +40,20 @@ const TotalPrice = styled.p`
   font-size: 22px;
 `;
 
-export { Container, Text, TotalPrice };
+const Button = styled.button`
+  width: 100%;
+  font-weight: 500;
+  background: #4da2c2;
+  height: 30px;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 19px 10px;
+  font-size: 17px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export { Container, Content, Text, TotalPrice, Button };
