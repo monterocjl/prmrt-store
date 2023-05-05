@@ -11,6 +11,7 @@ export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
+    //Para agregar los datos de usuario logueado recibidos por API y almacenar el token en Local Storage
     addUser: (state, action) => {
       const { name, username, email, token } = action.payload;
 
@@ -21,13 +22,11 @@ export const userSlice = createSlice({
       state.username = username;
       state.token = token;
     },
-
-    removeUser: (state, action) => {
-      console.log("Logout");
-    },
   },
 });
 
-// Action creators are generated for each case reducer function
+// Se exportan las funciones como acciones para poder usarlas desde cualquier componentes
 export const { addUser, removeUser } = userSlice.actions;
+
+//Se exporta el slice para agregarlo al Store y poder acceder a su estado desde cualquier componente
 export default userSlice.reducer;

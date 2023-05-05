@@ -1,3 +1,4 @@
+//Este servicio realiza una petición a una API para obtener un listado de productos
 async function getProducts() {
   try {
     const response = await fetch("https://fakestoreapi.com/products");

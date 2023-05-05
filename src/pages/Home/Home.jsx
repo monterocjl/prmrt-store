@@ -46,6 +46,7 @@ export default function Home() {
         <ResetButton onClick={handleResetFilter}>Limpiar filtros</ResetButton>
       </ContainerCategories>
       <Container>
+        {/* Mostrará los productos sin filtros o filtrados dependiendo de la existencia de datos en el array productsFilter*/}
         {productsFilter.length === 0
           ? products?.map((product) => (
               <ProductCard key={product.id} product={product} />

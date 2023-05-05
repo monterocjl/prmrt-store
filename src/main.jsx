@@ -7,6 +7,7 @@ import { store } from "./app/store.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    {/* Provider agregado para poder acceder a los estados globales  */}
     <Provider store={store}>
       <App />
     </Provider>

@@ -14,6 +14,7 @@ import {
 export const Layout = ({ children }) => {
   return (
     <Container>
+      {/* Para mostrar un NavBar solo en Desktop */}
       <Desktop>
         <ButtonMenu to='/'>Inicio</ButtonMenu>
         <div>
@@ -25,7 +26,10 @@ export const Layout = ({ children }) => {
           </ButtonMenu>
         </div>
       </Desktop>
+
       <Content>{children}</Content>
+
+      {/* Para mostrar un NavBar inferior solo en Mobile */}
       <Mobile>
         <ButtonMenu to='/'>
           <BsFillHouseDoorFill />

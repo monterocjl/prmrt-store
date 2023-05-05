@@ -7,6 +7,7 @@ import Product from "./pages/Product/Product";
 function App() {
   return (
     <BrowserRouter>
+      {/* Rutas definidas para la web */}
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />

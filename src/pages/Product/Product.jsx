@@ -5,6 +5,7 @@ import { Container } from "./StyledComponents";
 import { Layout } from "../../components/Layout/Layout";
 
 export default function Product() {
+  // Para poder recibir Props a través de React Router Dom
   const location = useLocation();
   const { product } = location.state;
 
