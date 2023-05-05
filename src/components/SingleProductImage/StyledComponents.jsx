@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
+  position: relative;
   display: flex;
   width: 50%;
   justify-content: center;
@@ -20,4 +22,17 @@ const Image = styled.img`
   }
 `;
 
-export { Container, Image };
+const ArrowBack = styled(Link)`
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: -30px;
+    left: -13px;
+    font-size: 44px;
+    color: black;
+    position: absolute;
+  }
+`;
+
+export { Container, Image, ArrowBack };

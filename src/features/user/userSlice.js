@@ -4,6 +4,7 @@ const initialState = {
   name: "",
   username: "",
   email: "",
+  token: null,
 };
 
 export const userSlice = createSlice({
@@ -18,6 +19,7 @@ export const userSlice = createSlice({
       state.email = email;
       state.name = name;
       state.username = username;
+      state.token = token;
     },
 
     removeUser: (state, action) => {

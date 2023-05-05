@@ -16,7 +16,7 @@ const CardContainer = styled(Link)`
 `;
 
 const ImageContainer = styled.div`
-  width: 218px;
+  width: 161px;
   height: 218px;
   padding: 26px;
   flex: 1;

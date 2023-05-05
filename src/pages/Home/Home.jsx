@@ -1,15 +1,25 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { addProductsToList } from "../../features/products/productsSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addProductsToList,
+  filterByCategory,
+  resetFilter,
+} from "../../features/products/productsSlice";
 import { getProducts } from "../../services/products";
 import { ProductCard } from "../../components/ProductCard/ProductCard";
-import { Container } from "./StyledComponents";
+import {
+  Container,
+  Button,
+  ResetButton,
+  ContainerCategories,
+} from "./StyledComponents";
 import { Layout } from "../../components/Layout/Layout";
 
 export default function Home() {
   const dispatch = useDispatch();
-  const productsList = useSelector((state) => state.products[0]);
+  const { products, productsFilter, categories } = useSelector(
+    (state) => state.products
+  );
 
   useEffect(() => {
     getProducts()
@@ -17,12 +27,32 @@ export default function Home() {
       .catch(console.log);
   }, []);
 
+  function handleFilter(category) {
+    dispatch(filterByCategory(category));
+  }
+
+  function handleResetFilter() {
+    dispatch(resetFilter());
+  }
+
   return (
     <Layout>
-      <Container>
-        {productsList?.map((product) => (
-          <ProductCard key={product.id} product={product} />
+      <ContainerCategories>
+        {categories?.map((category) => (
+          <Button key={category} onClick={() => handleFilter(category)}>
+            {category}
+          </Button>
         ))}
+        <ResetButton onClick={handleResetFilter}>Limpiar filtros</ResetButton>
+      </ContainerCategories>
+      <Container>
+        {productsFilter.length === 0
+          ? products?.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))
+          : productsFilter?.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
       </Container>
     </Layout>
   );

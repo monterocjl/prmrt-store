@@ -9,4 +9,11 @@ const Container = styled.div`
   margin-right: auto;
 `;
 
-export { Container };
+const EmptyCart = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 115px);
+`;
+
+export { Container, EmptyCart };
