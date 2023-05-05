@@ -23,6 +23,7 @@ const Button = styled.button`
   padding: 7px 15px;
   background: #4da2c2;
   color: white;
+  cursor: pointer;
 `;
 
 const ResetButton = styled.button`
@@ -31,6 +32,7 @@ const ResetButton = styled.button`
   background: none;
   text-decoration: underline;
   color: #4da2c2;
+  cursor: pointer;
 `;
 
 export { Container, Button, ResetButton, ContainerCategories };
