@@ -4,7 +4,7 @@ export const TotalCart = ({ totalPrice }) => {
   return (
     <Container>
       <Text>Total</Text>
-      <TotalPrice>{totalPrice}</TotalPrice>
+      <TotalPrice>S/. {totalPrice}</TotalPrice>
     </Container>
   );
 };

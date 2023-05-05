@@ -8,12 +8,15 @@ import {
   QuantityContainer,
   Button,
   Quantity,
+  DeleteProduct,
 } from "./StyledComponents";
 import { useDispatch } from "react-redux";
 import {
   incrementQuantity,
   decrementQuantity,
+  removeProduct,
 } from "../../features/cart/cartSlice";
+import { BsFillTrashFill } from "react-icons/bs";
 
 export const ProductInCartCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -28,6 +31,10 @@ export const ProductInCartCard = ({ product }) => {
         dispatch(decrementQuantity(product.id));
         break;
     }
+  }
+
+  function handleRemoveProduct() {
+    dispatch(removeProduct(product.id));
   }
 
   return (
@@ -46,6 +53,10 @@ export const ProductInCartCard = ({ product }) => {
         <Quantity>{quantity}</Quantity>
         <Button onClick={() => handleQuantity("+")}>+</Button>
       </QuantityContainer>
+
+      <DeleteProduct onClick={handleRemoveProduct}>
+        <BsFillTrashFill />
+      </DeleteProduct>
     </CardContainer>
   );
 };

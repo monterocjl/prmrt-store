@@ -60,7 +60,7 @@ const QuantityContainer = styled.div`
   position: absolute;
   bottom: 9px;
   right: 9px;
-  background: #e0e0e0;
+  background: #f2f2f2;
   gap: 10px;
   border-radius: 5px;
   align-items: center;
@@ -81,6 +81,18 @@ const Quantity = styled.p`
   margin: 0px;
 `;
 
+const DeleteProduct = styled.div`
+  background: #f2f2f2;
+  display: flex;
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  gap: 10px;
+  border-radius: 5px;
+  align-items: center;
+  padding: 5px;
+`;
+
 export {
   CardContainer,
   ImageContainer,
@@ -91,4 +103,5 @@ export {
   QuantityContainer,
   Button,
   Quantity,
+  DeleteProduct,
 };

@@ -22,11 +22,13 @@ const Container = styled.div`
 
 const Text = styled.p`
   margin: 0px;
+  font-size: 22px;
 `;
 
 const TotalPrice = styled.p`
   margin: 0px;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 22px;
 `;
 
 export { Container, Text, TotalPrice };
